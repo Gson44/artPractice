@@ -1,14 +1,9 @@
-let practiceBTN = document.getElementById("btnContainer");
+
 let playBTN = document.getElementById("startBTN")
 
-practiceBTN.addEventListener("click", startPractice);
 playBTN.addEventListener("click", timer)
 
-function startPractice(){
-    //let classBTN = document.getElementsByClassName("stopWatchBTN")
-    alert("do something")
-    
-}
+
 
 function timer(){
    
