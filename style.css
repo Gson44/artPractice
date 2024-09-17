@@ -85,3 +85,17 @@ footer {
     width: 100%;
     color: white;
 }
+
+#stopWatchContainer {
+    margin-top: 30px;
+    text-align: center;
+}
+
+#timer {
+    font-size: 4em;
+    margin-bottom: 20px;
+}
+
+.stopWatchBTN {
+    display: none;
+}
