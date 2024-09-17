@@ -1,28 +1,37 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
+
 body {
     font-family: Arial, Helvetica, sans-serif;
+    height: 100%;
 }
-#Header{
+
+#Header {
     background-color: rgb(229, 229, 229);
     display: flex;
     align-items: center;
-    max-width:100% ;
+    width: 100%;
+    padding: 10px; /* Added padding for spacing */
 }
+
 #title1 {
     font-weight: 100;
 }
+
 #title2 {
     font-weight: bold;
     color: gray;
-    text-shadow: rgb(184, 184, 184) 2px 2px 15px;
+    text-shadow: 2px 2px 15px rgb(184, 184, 184);
 }
+
 #item1 {
     font-weight: bolder;
     font-size: 32px;
 }
+
 #Column2 {
     text-align: center;
     margin: auto;
@@ -31,18 +40,23 @@ body {
 }
 
 #streak {
-    color:gray;
+    color: gray;
 }
 
 #progress {
     background-color: rgb(209, 209, 209);
-    padding:30px;
+    padding: 30px;
     height: 100px;
     max-width: 70%;
     border-radius: 20px;
     margin: 40px auto;
-    position: relative;
     text-align: center;
+}
+
+#btnContainer {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Added gap between buttons */
 }
 
 button {
@@ -51,8 +65,23 @@ button {
     padding: 20px;
     font-size: 22px;
     border-radius: 20px;
+    cursor: pointer; /* Added for better UX */
+}
+
+#quote {
+    text-align: center;
+    color: gray;
+    font-weight: 100;
+    margin: 20px 0; /* Added margin for spacing */
 }
 
 footer {
-    background-color: color;
+    display: flex;
+    justify-content: space-around;
+    background-color: rgb(0, 0, 0);
+    padding: 20px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    color: white;
 }
