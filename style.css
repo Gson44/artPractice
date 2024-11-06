@@ -4,9 +4,14 @@
     box-sizing: border-box;
 }
 
+html, body {
+    height: 100%; /* Ensure the body and html are full height */
+    display: flex;
+    flex-direction: column;
+}
+
 body {
     font-family: Arial, Helvetica, sans-serif;
-    height: 100%;
 }
 
 #Header {
@@ -80,10 +85,9 @@ footer {
     justify-content: space-around;
     background-color: rgb(0, 0, 0);
     padding: 20px;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
     color: white;
+    margin-top: auto; /* Pushes the footer to the bottom */
+    width: 100%;
 }
 
 #stopWatchContainer {
@@ -95,7 +99,43 @@ footer {
     font-size: 4em;
     margin-bottom: 20px;
 }
-/*
-.stopWatchBTN {
+
+/* Video CSS */
+#video, #photo {
+    border: 1px solid black;
+    box-shadow: 2px 2px 3px black;
+    width: 320px;
+    height: 240px;
+}
+
+#canvas {
     display: none;
-}*/
+}
+
+.camera, .output {
+    width: 340px;
+    display: inline-block;
+}
+
+.output {
+    vertical-align: top;
+}
+
+#start-button {
+    display: block;
+    margin: 0 auto;
+    background-color: rgba(0, 150, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    box-shadow: 0px 0px 1px 2px rgba(0, 0, 0, 0.2);
+    font-size: 14px;
+    font-family: "Lucida Grande", Arial, sans-serif;
+    color: rgba(255, 255, 255, 1);
+    position: relative;
+    bottom: 32px;
+}
+
+.content-area {
+    font-size: 16px;
+    font-family: "Lucida Grande", Arial, sans-serif;
+    width: 760px;
+}
