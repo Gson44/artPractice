@@ -22,7 +22,7 @@
       navigator.mediaDevices
         .getUserMedia({ 
           video: {
-            facingMode: environment
+            facingMode: 'environment'
           } ,
           audio: false 
         
