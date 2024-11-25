@@ -8,6 +8,13 @@
     let canvas = null;
     let photo = null;
     let startButton = null;
+
+    // Timer Functionality
+    const playBTN = document.getElementById("startBTN");
+    const stopBTN = document.getElementById("stopBTN");
+    const sound = new Audio("alarm.wav");
+
+    let userFinishDrawing = null;
   
     // Function to initialize the camera
     function startup() {
@@ -84,19 +91,8 @@
         clearPhoto();
       }
     }
-  
-    // Initialize the camera on page load
-    window.addEventListener("load", startup, false);
-  })();
-  
-  // Timer Functionality
-  const playBTN = document.getElementById("startBTN");
-  const stopBTN = document.getElementById("stopBTN");
-  const sound = new Audio("alarm.wav");
-  
-  let userFinishDrawing = null;
-  
-  // Start the timer
+
+    // Start the timer
   function startTimer() {
     userFinishDrawing = false;
     let sec = 10;
@@ -123,8 +119,18 @@
       // Add any functionality you want when the user has finished drawing
     }
   }
-  
-  // Event listeners for timer buttons
+
+     // Event listeners for timer buttons
   playBTN.addEventListener("click", startTimer);
   stopBTN.addEventListener("click", stopTimer);
+  
+    // Initialize the camera on page load
+    window.addEventListener("load", startup, false);
+  })();
+  
+  
+  
+  
+  
+ 
   
