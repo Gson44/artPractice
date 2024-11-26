@@ -1,3 +1,5 @@
+
+/* ----------------------------------------------------    App Elements Styling Beginning -----------------------------*/
 * {
     margin: 0;
     padding: 0;
@@ -14,6 +16,29 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
+button {
+    background-color: orange;
+    border: 1px solid black;
+    padding: 20px;
+    font-size: 22px;
+    border-radius: 20px;
+    cursor: pointer; /* Added for better UX */
+}
+
+
+
+footer {
+    display: flex;
+    justify-content: space-around;
+    background-color: rgb(0, 0, 0);
+    padding: 20px;
+    color: white;
+    margin-top: auto; /* Pushes the footer to the bottom */
+    width: 100%;
+}
+/* ----------------------------------------------------    App Elements Styling End -----------------------------*/
+
+/* ----------------------------------------------------  App ID Styling Beginning -----------------------------*/
 #Header {
     background-color: rgb(229, 229, 229);
     display: flex;
@@ -64,30 +89,11 @@ body {
     gap: 20px; /* Added gap between buttons */
 }
 
-button {
-    background-color: orange;
-    border: 1px solid black;
-    padding: 20px;
-    font-size: 22px;
-    border-radius: 20px;
-    cursor: pointer; /* Added for better UX */
-}
-
 #quote {
     text-align: center;
     color: gray;
     font-weight: 100;
     margin: 20px 0; /* Added margin for spacing */
-}
-
-footer {
-    display: flex;
-    justify-content: space-around;
-    background-color: rgb(0, 0, 0);
-    padding: 20px;
-    color: white;
-    margin-top: auto; /* Pushes the footer to the bottom */
-    width: 100%;
 }
 
 #stopWatchContainer {
@@ -99,8 +105,20 @@ footer {
     font-size: 4em;
     margin-bottom: 20px;
 }
+/* ----------------------------------------------------  App ID Styling End -----------------------------*/
+/* ----------------------------------------------------  App Class Styling Beginning -----------------------------*/
+.btnState {
+    display: none;
+    
+}
 
-/* Video CSS */
+
+
+/* ----------------------------------------------------  App Class Styling End -----------------------------*/
+
+
+/* ----------------------------------------------------    Camera Styling Beginning -----------------------------*/
+/* Video  Camera CSS */
 #video, #photo {
     border: 1px solid black;
     box-shadow: 2px 2px 3px black;
@@ -137,7 +155,7 @@ footer {
     font-size: 16px;
     font-family: "Lucida Grande", Arial, sans-serif;
     max-width: 100%;
-    display: flex;
+    display: none;
     flex-direction: column;
     justify-content: center;
     align-self:center;
@@ -146,3 +164,5 @@ footer {
 .output {
     display: none;
 }
+
+/* ----------------------------------------------------    Camera Styling End -----------------------------*/

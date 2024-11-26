@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 </head>
 <body>
+
+    <!--Header Section-->
     <div id="Header">
         <div id="Columne1">
             <p id="title1">Ready To Create</p>
@@ -25,21 +27,25 @@
 
     </div>
   
+    <!--Progress Section-->
+    <h2 id="quote">
+        Dedication Will Pay Off
+    </h2>
     
-    <h2 id="quote">Dedication Will Pay Off</h2>
-    
+    <!--Stopwatch Section-->
     <div id="stopWatchContainer">
         <div id="timer">
             60:00
         </div>
         <button class="stopWatchBTN" id="startBTN">Start</button>
-        <button class="stopWatchBTN" id="stopBTN">Stop</button>
-        <button class="stopWatchBTN">Reset</button>
-
+        <button class="stopWatchBTN btnState" id="continueBTN">Continue</button>
+        <button class="stopWatchBTN btnState" id="stopBTN">Pause</button>
+        <button class="stopWatchBTN btnState" id="resetBTN">Reset</button>
+        <button class=" btnState" id="finishBTN">Finish</button>
     </div>
    
+    <!--Camera Section-->
     <div class="content-area">
-        
         <div class="camera">
           <video id="video">Video stream not available.</video>
           <button id="start-button">Take photo</button>
@@ -48,19 +54,19 @@
         <div class="output">
           <img id="photo" alt="The screen capture will appear in this box." />
         </div>
-       
       </div>
       
+      <!--Footer Section-->
     <footer>
         <span class="material-symbols-outlined">
             home
-            </span>
-            <span class="material-symbols-outlined">
-                image
-                </span>
-                <span class="material-symbols-outlined">
-                    settings
-                    </span>
+        </span>
+        <span class="material-symbols-outlined">
+            image
+        </span>
+        <span class="material-symbols-outlined">
+            settings
+        </span>
     </footer>
     <script src="script.js"></script>
 </body>
