@@ -105,6 +105,10 @@ footer {
     font-size: 4em;
     margin-bottom: 20px;
 }
+
+#continueBTN {
+    display: none;
+}
 /* ----------------------------------------------------  App ID Styling End -----------------------------*/
 /* ----------------------------------------------------  App Class Styling Beginning -----------------------------*/
 .btnState {

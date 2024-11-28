@@ -8,8 +8,8 @@
     let canvas = null;
     let photo = null;
     let startButton = null;
-    let sec = 10;
-    let min = 1;
+    let sec = 0;
+    let min = 60;
     let timer;
 
     // Timer Functionality
@@ -17,7 +17,10 @@
     const stopBTN = document.getElementById("stopBTN");
     const sound = new Audio("alarm.wav");
     const continueBTN = document.getElementById("continueBTN");
-    const resetBTN = document.getElementById("resetBTN");
+    const finishBTN = document.getElementById("finishBTN");
+    const timerElement =  document.getElementById("timer");
+    const canvasElement = document.getElementById("canvas");
+    
 
     let userFinishDrawing = null;
   
@@ -110,10 +113,22 @@
     userFinishDrawing = false;
     
     timer = setInterval(function () {
-      document.getElementById("timer").innerHTML = `${min}:${sec}`;
+      //document.getElementById("timer").innerHTML = `${min}:${sec}`;
+      
+      // Check if second is in double or single digit.
+      if(sec < 10 && sec >= 0){
+        timerElement.innerHTML = `${min}:0${sec}`;
+      }
+      else {
+        timerElement.innerHTML = `${min}:${sec}`;
+      }
+      
+      // Begin Count Down
       sec--;
+
+      // Check if it reach zer0
       if (sec < 0) {
-        sec = 10;
+        sec = 59;
         min--;
       }
       if (min === 0) {
@@ -126,11 +141,13 @@
 
   function resumeTimer(){
     startTimer()
+    continueBTN.style.display = "none"
     console.log("working")
   }
   
   // Stop the timer
   function stopTimer() {
+    continueBTN.style.display = "inline-block"
     sound.pause();
     setTimeout(function(){
       clearInterval(timer);
@@ -140,18 +157,27 @@
       // Add any functionality you want when the user has finished drawing
     }
   }
-  // Rest the timer
-  function resetTimer(){
-    sec = 10;
-    min = 1;
-    startTimer();
+
+  // Function For Art Practice
+  function finishArtPractice(){
+    stopTimer();
+    playBTN.style.display = "none";
+    stopBTN.style.display = "none";
+    finishBTN.style.display = "none";
+    continueBTN.style.display = "none";
+    timerElement.innerHTML = ""
+    timerElement.style.display = "none";
+    canvas.style.display = "inline-block";
+    startup()
   }
+
 
      // Event listeners for timer buttons
   playBTN.addEventListener("click", startTimer);
   stopBTN.addEventListener("click", stopTimer);
   continueBTN.addEventListener("click", resumeTimer)
-  resetBTN.addEventListener("click", resetTimer);
+  finishBTN.addEventListener("click", finishArtPractice)
+ 
   
     // Initialize the camera on page load
     window.addEventListener("load", startup, false);
