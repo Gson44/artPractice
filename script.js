@@ -19,8 +19,9 @@
     const continueBTN = document.getElementById("continueBTN");
     const finishBTN = document.getElementById("finishBTN");
     const timerElement =  document.getElementById("timer");
-    const canvasElement = document.getElementById("canvas");
-    
+    const contentArea = document.getElementsByClassName("content-area");
+    const contentButtons = document.getElementsByClassName("contentBTN");
+    const redoBTN = document.getElementById("redo-button")
 
     let userFinishDrawing = null;
   
@@ -87,6 +88,8 @@
   
     // Function to take a picture
     function takePicture() {
+      video = document.getElementById("video");
+      startButton = document.getElementById("start-button");
       const context = canvas.getContext("2d");
       if (width && height) {
         canvas.width = width;
@@ -95,10 +98,35 @@
   
         const data = canvas.toDataURL("image/png");
         photo.setAttribute("src", data);
+
+      
       } else {
         clearPhoto();
       }
+
+      
+      for(let x = 0; x < contentButtons.length; x++){
+        contentButtons[x].style.display = "inline-block";
     }
+    
+      video.style.display = "none";
+      startButton.style.display = "none";
+    }
+
+    function retakePicture(){
+      video = document.getElementById("video");
+      startButton = document.getElementById("start-button");
+      for(let x = 0; x < contentButtons.length; x++){
+        contentButtons[x].style.display = "none";
+      }
+    
+      video.style.display = "inline-block";
+      startButton.style.display = "inline-block";
+      clearPhoto();
+      
+    }
+
+    
 
     // Start the timer
   function startTimer() {
@@ -167,7 +195,9 @@
     continueBTN.style.display = "none";
     timerElement.innerHTML = ""
     timerElement.style.display = "none";
-    canvas.style.display = "inline-block";
+    //canvas.style.display = "inline-block";
+    contentArea[0].style.display = "inline-block";
+
     startup()
   }
 
@@ -175,12 +205,13 @@
      // Event listeners for timer buttons
   playBTN.addEventListener("click", startTimer);
   stopBTN.addEventListener("click", stopTimer);
-  continueBTN.addEventListener("click", resumeTimer)
-  finishBTN.addEventListener("click", finishArtPractice)
- 
+  continueBTN.addEventListener("click", resumeTimer);
+  finishBTN.addEventListener("click", finishArtPractice);
+  redoBTN.addEventListener("click", retakePicture);
+  
   
     // Initialize the camera on page load
-    window.addEventListener("load", startup, false);
+    //window.addEventListener("load", startup, false);
   })();
   
   
