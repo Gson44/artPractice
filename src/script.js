@@ -15,7 +15,7 @@
     // Timer Functionality
     const playBTN = document.getElementById("startBTN");
     const stopBTN = document.getElementById("stopBTN");
-    const sound = new Audio("alarm.wav");
+    const sound = new Audio("../alarm.wav");
     const continueBTN = document.getElementById("continueBTN");
     const finishBTN = document.getElementById("finishBTN");
     const timerElement =  document.getElementById("timer");
