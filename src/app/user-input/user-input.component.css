@@ -1,0 +1,33 @@
+#userInputContainer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+   
+}
+
+#userInputContainer > input[type=text] {
+    font-size: 62px;
+}
+
+#userInputContainer > button {
+    border: none;
+    font-size: 32px;
+    background-color: orange;
+    color: white;
+    margin-left: 20px;
+    padding: 10px;
+    border-radius:5px ;
+}
+
+
+@media (max-width: 600px) {
+    #userInputContainer > input[type=text] {
+        font-size: 6vw;
+    }
+    #userInputContainer > button {
+        font-size: 5vw;
+    }
+}
